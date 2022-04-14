@@ -14,12 +14,11 @@ class Solution:
         if pt == 0:
             nums.sort()
             return 
+        
         j = len(nums) -1
         while nums[pt-1] >= nums[j]:
-            j -= 1 
-            
+            j -= 1    
         nums[pt-1], nums[j] = nums[j], nums[pt-1]
-        #print(nums)
         nums[pt:] = reversed(nums[pt:])
         
     
