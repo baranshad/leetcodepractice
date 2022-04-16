@@ -9,17 +9,15 @@ class Solution:
         if not root:
             return []
         
-        res = []
-        temp = [(root, str(root.val))]
-        
-        while temp:
-            node, tmp = temp.pop()
-            if not node.left and not node.right:
-                res.append(tmp) 
-            if node.left:
-                temp.append((node.left, tmp + "->" + str(node.left.val)))
-                
-            if node.right:
-                temp.append((node.right, tmp + "->" + str(node.right.val)))
-                
+        def helper(root, path):
+            if root:
+                path += str(root.val)
+                if not root.left and not root.right:
+                    res.append(path)
+                else:
+                    path += "->"
+                    helper(root.left, path)
+                    helper(root.right, path)
+        res = []  
+        helper(root, '')
         return res 
