@@ -18,6 +18,5 @@ class Solution:
                 if word_freq[nums[i]] == 0:
                     del word_freq[nums[i]]
                 i += 1 
-            if j-i+1 < k:
-                j+= 1 
+            j+= 1 
         return ans 
