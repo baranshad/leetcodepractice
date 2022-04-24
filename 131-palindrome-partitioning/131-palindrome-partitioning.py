@@ -10,13 +10,11 @@ class Solution:
                 return 
             
             for i in range(idx, len(s)):
-                if valid(s[idx:i+1]):
+                if (s[idx:i+1] == s[idx:i+1][::-1]):
                     temp.append(s[idx:i+1])
                     helper(i+1, temp)
                     temp.pop()
-                
-        def valid(s):
-            return s == s[::-1]
+            
         
         
         helper(0, [])
