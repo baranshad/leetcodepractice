@@ -15,7 +15,7 @@ class Solution:
             while fast.next and fast.val == fast.next.val:
                 fast = fast.next
             if pre.next == fast:
-                pre = pre.next 
+                pre = fast
             elif pre.next != fast:
                 pre.next = fast.next 
             fast = fast.next 
