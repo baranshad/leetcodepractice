@@ -4,17 +4,13 @@ class Solution:
             return 
         
         stack = []
-        next_g_map = {}
-        
-        for num in nums2:
-            while stack and stack[-1] < num:
-                next_g_map[stack.pop()] = num 
-                
-            stack.append(num)
+        d = {}
+        for i in nums2:
+            while stack and stack[-1] < i:
+                d[stack.pop()] = i 
+            stack.append(i)
             
-        return [next_g_map.get(num, -1) for num in nums1] 
-
-
+        return [d.get(num, -1) for num in nums1]
   
             
         
