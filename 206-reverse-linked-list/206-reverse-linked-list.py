@@ -11,7 +11,6 @@ class Solution:
         cur = self.reverseList(head.next)
         head.next.next = head 
         head.next = None 
-        return cur 
-        
+        return cur
         
             
