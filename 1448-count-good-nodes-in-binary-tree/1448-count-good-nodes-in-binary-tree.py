@@ -10,8 +10,8 @@ class Solution:
         
         def helper(node, maxval):
             nonlocal count
-            #if not node:
-               # return 
+            if not node:
+                return 
             
             if node.val >= maxval:
                 count +=1 
