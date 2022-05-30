@@ -1,10 +1,10 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        idx = 0 
-        j = 1 
-        while j < len(nums):
-            if nums[j] != nums[idx]:
-                idx += 1 
-                nums[idx] = nums[j]
-            j +=1 
-        return idx + 1 
+        i = 0
+        while i < len(nums)-1:
+            if nums[i] == nums[i+1]:
+                del nums[i+1]
+                continue 
+            i += 1 
+            
+        return i+1 
