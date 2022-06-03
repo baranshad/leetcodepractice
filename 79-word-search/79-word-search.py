@@ -1,27 +1,40 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
+        
         m = len(board)
         n = len(board[0])
-        b = board 
         
-        def helper(i,j, suffix):
-            if len(suffix) == 0:
-                return True 
+        
+        def helper(i,j, wordlist):
+            if not len(wordlist):
+                return True
             
-            if i < 0 or i >= m or j < 0 or j >= n or suffix[0] != b[i][j]:
+            if i < 0 or j < 0 or i>=m or j >= n or wordlist[0] != board[i][j]:
                 return False 
             
-            b[i][j] = "#"
-            for (x,y) in [(0,1), (1,0), (-1,0), (0,-1)]:
-                if helper(x+i, y+j, suffix[1:]):
+            board[i][j] ="#"
+            for dx, dy in [(0,1),(1,0),(-1,0),(0,-1)]:
+                nx, ny = i+dx, j+dy 
+                if helper(nx, ny, wordlist[1:]):
                     return True 
-            b[i][j] = suffix[0]
+            board[i][j] = wordlist[0]
             return False 
+            
+            
         
+        #print(helper(0,0, list(word), set()))
+        
+
         for i in range(m):
             for j in range(n):
-                if helper(i,j, word):
-                    return True 
-            
+                if board[i][j] == word[0]:
+                    if helper(i,j, word):
+                        #print(helper(i,j,[], list(word)))
+                        return True 
         return False 
+                    
+                    
+ 
+  
+                
                 
