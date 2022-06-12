@@ -11,7 +11,8 @@ class Solution:
             head.next = pre 
             pre = head 
             head = temp 
-        return pre 
+        head = pre 
+        return head
         
         
     
