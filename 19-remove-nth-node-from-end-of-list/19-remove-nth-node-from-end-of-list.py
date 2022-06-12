@@ -8,17 +8,14 @@ class Solution:
         fast = head 
         for i in range(n):
             fast = fast.next 
-        
-        if not fast:
+        if not fast: ## corner case here, why return head.next 
             return head.next
-        
         slow = head 
-        while slow and  fast.next:
+        while slow and fast.next:
             fast = fast.next 
             slow = slow.next 
-            
         slow.next = slow.next.next 
-        return head 
+        return head ## why not as above return head.next 
         
         
       
