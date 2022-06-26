@@ -4,13 +4,13 @@ class Solution:
         res = [] 
         for i in range(len(nums)):
             if i == 0 or nums[i] != nums[i-1]:
-                cur = nums[i]
+                #cur = nums[i]
                 l = i+1 
                 r = len(nums)-1 
                 while l < r:
-                    three = cur + nums[l] + nums[r]
+                    three = nums[i] + nums[l] + nums[r]
                     if three == 0:
-                        res.append([cur, nums[l], nums[r]])
+                        res.append([nums[i], nums[l], nums[r]])
                         l += 1 
                         r -= 1 
                         continue
@@ -18,6 +18,7 @@ class Solution:
                         l += 1 
                     else:
                         r -= 1 
+        print(res)
         return [x for x in set(tuple(x) for x in res)]
       
              
