@@ -11,17 +11,14 @@ class Solution:
         self.visited = {}
         
     def cloneGraph(self, node: 'Node') -> 'Node':
-        if not node:
-            return node 
+        if not node: return node 
         if node in self.visited:
             return self.visited[node]
-        
         clone_node = Node(node.val, [])
         self.visited[node] = clone_node
-        
         if node.neighbors:
-            clone_node.neighbors = [self.cloneGraph(n) for n in node.neighbors]
+            clone_node.neighbors= [self.cloneGraph(n) for n in node.neighbors]
             
         return clone_node 
-        
+    
     
