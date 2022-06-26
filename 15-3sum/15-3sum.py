@@ -1,28 +1,23 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        def helper(nums, i, ans):
-            left = i+1 
-            right = len(nums) -1 
-            while left < right:
-                sumofthree = nums[i] + nums[left] + nums[right]
-                if sumofthree < 0:
-                    left +=1 
-                elif sumofthree > 0:
-                    right -= 1 
-                else:
-                    ans.append([nums[i], nums[left], nums[right]])
-                    left +=1 
-                    right -=1 
-                    while left < right and nums[left] == nums[left-1]:
-                        left +=1 
-                        
-        nums.sort()
-        ans = []
+        nums = sorted(nums)
+        res = [] 
         for i in range(len(nums)):
-            if nums[i] > 0: break 
-            elif i==0 or nums[i] != nums[i-1]:
-                helper(nums, i, ans)              
-        return ans 
-
-            
-        
+            if i == 0 or nums[i] != nums[i-1]:
+                cur = nums[i]
+                l = i+1 
+                r = len(nums)-1 
+                while l < r:
+                    three = cur + nums[l] + nums[r]
+                    if three == 0:
+                        res.append([cur, nums[l], nums[r]])
+                        l += 1 
+                        r -= 1 
+                        continue
+                    if three < 0:
+                        l += 1 
+                    else:
+                        r -= 1 
+        return [x for x in set(tuple(x) for x in res)]
+      
+             
