@@ -1,17 +1,15 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        ans = 0 
-        partialsum =  defaultdict(int)
-        #partialsum[0] = 1 
-        pre = 0
-        for i in nums:
-            pre = pre + i 
-            if pre == k:
-                ans +=1 
-            if pre - k in partialsum:
-                ans += partialsum[pre-k] 
+        presum = defaultdict(int)
+        temp = 0
+        ans = 0
+        for i in range(len(nums)):
+            temp += nums[i]
+            if temp == k:
+                ans += 1 
+            if temp - k in presum:
+                ans += presum[temp-k]
+            presum[temp] += 1 
             
-            partialsum[pre] += 1 
         return ans 
- 
-
+            
