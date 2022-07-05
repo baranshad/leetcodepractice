@@ -7,9 +7,6 @@ class Solution:
             else:
                 s_counter[i] = 1 
 
-        
-        #for i,j in s_counter.items():
-            #print(i,j)
         ans = ["w"] 
         characterWithMaxFrequency = ''
         maxFrequency = 0
@@ -19,15 +16,14 @@ class Solution:
                 if frequency > maxFrequency and char != ans[-1]:
                     characterWithMaxFrequency = char
                     maxFrequency = frequency
-            ## not equal ans[-1]
+                    
             if characterWithMaxFrequency == '': return ""
-            print(characterWithMaxFrequency)
+            #print(characterWithMaxFrequency)
             s_counter[characterWithMaxFrequency] = s_counter[characterWithMaxFrequency] - 1
             ans.append(characterWithMaxFrequency)
             maxFrequency = 0
             characterWithMaxFrequency = ''
-            
-        #temp = 
+
         return "".join(ans[1:])
 
 
