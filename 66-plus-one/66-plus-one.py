@@ -9,6 +9,6 @@ class Solution:
                 digits[i] = digits[i]+1 
                 return digits
                 break 
-            i -= 1 
+            i = i- 1 
                 
         return [1]+ digits 
