@@ -10,4 +10,4 @@ class Solution:
                     left.pop()
                 else:
                     return False         
-        return left == []
+        return not left  
