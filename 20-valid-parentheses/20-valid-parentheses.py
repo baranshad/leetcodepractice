@@ -1,13 +1,13 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        cdict = {'(': ')', '{' :'}' ,'[': ']'}
-        stack = []
+        left = []
+        d = {"(":")", "[":"]","{":"}"}
         for c in s:
-            if c in cdict:
-                stack.append(c)
-            elif stack and cdict[stack[-1]] == c:
-                stack.pop()
+            if c in d:
+                left.append(c)
             else:
-                return False 
-                
-        return stack == []
+                if left and c == d[left[-1]]:
+                    left.pop()
+                else:
+                    return False         
+        return left == []
