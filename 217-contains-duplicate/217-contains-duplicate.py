@@ -1,9 +1,10 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        d = defaultdict(int)
-        for val in nums:
-            if val not in d:
-                d[val] = 1 
+        d = {}
+        for i in nums:
+            if i in d:
+                d[i] +=1 
             else:
-                return True
-        return False
+                d[i] = 1 
+        temp = [j for j in d.values()]        
+        return max(temp) >= 2 
