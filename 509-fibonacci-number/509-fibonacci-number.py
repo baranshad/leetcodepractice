@@ -1,10 +1,10 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n == 0 or n==1:
+        if n < 2:
             return n 
-        ans = [0,1]
-        for i in range(2,n+1):
-            temp = ans[-1] + ans[-2]
-            ans.append(temp)
-            
-        return ans[-1]
+        else:
+            ans = [0,1]
+            for i in range(2, n+1):
+                ans.append(ans[i-1]+ans[i-2])
+                
+            return ans[-1]
