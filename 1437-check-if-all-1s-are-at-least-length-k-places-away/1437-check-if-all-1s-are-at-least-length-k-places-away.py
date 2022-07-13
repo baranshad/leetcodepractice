@@ -8,3 +8,15 @@ class Solution:
                 else:
                     prev = idx
         return True
+                
+                
+               
+                
+        #prev = -inf       
+        #for idx, val in enumerate(nums):
+            #if val == 1:
+                #if idx - prev <= k:
+                    #return False
+                #else:
+                    #prev = idx
+        #return True
