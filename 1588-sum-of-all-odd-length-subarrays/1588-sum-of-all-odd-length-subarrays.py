@@ -4,7 +4,7 @@ class Solution:
         for i in range(len(arr)):
             for j in range(i, len(arr)):
                 if (j-i+1) % 2:
-                    result = result+ sum(arr[i:j+1])
+                    result +=  sum(arr[i:j+1])
         return result 
     
     
