@@ -1,7 +1,7 @@
 class Solution:
     def maxAscendingSum(self, nums: List[int]) -> int:
-        res = nums[0]
-        ans = max(nums)
+        res = ans =nums[0]
+        #ans = max(nums)
         for i in range(len(nums)-1):
             if nums[i] < nums[i+1]:
                 res += nums[i+1]
