@@ -1,8 +1,6 @@
 class Solution:
     def checkRecord(self, s: str) -> bool:
-        c1 = 0
-        c2 = 0
-        maxc2  = 0
+        c1 = c2 = maxc2 = 0
         s1 = s + "P"
         print(s1)
         for i in range(len(s1)-1):
@@ -13,5 +11,4 @@ class Solution:
                 if s1[i] == "A":
                     c1 += 1
             maxc2 = max(maxc2, c2+1)
-        print(maxc2)
         return c1 < 2 and maxc2 < 3
