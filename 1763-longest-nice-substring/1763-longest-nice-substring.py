@@ -1,25 +1,17 @@
 class Solution:
     def longestNiceSubstring(self, s: str) -> str:
-        def valid(s):
-            for k in s.upper():
-                if k.lower() not in s or k.upper() not in s:
-                    return False
-            return True 
-            
+        def helper(s):
+            return len(set(s.lower())) == len(set(s))//2
         
         j = len(s)
-        while j:
-            for i in range(len(s)- j + 1):
+        while j > 0: 
+            for i in range(len(s)-j+1):
                 temp = s[i:i+j]
-                
-                if valid(temp):
+                if helper(temp):
                     return temp 
-                
             j -= 1 
-            
         return ''
                 
-                
-                
+    
         
         
