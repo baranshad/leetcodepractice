@@ -1,7 +1,6 @@
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         m = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-        print(len(m))
         seen = set()
         for word in words:
             temp = ""
