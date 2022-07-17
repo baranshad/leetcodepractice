@@ -4,9 +4,7 @@ select A.name
 from Employee A 
 left join 
 Employee B 
- on A.id = B.managerId
- where B.managerId is not Null
- group by B.managerId 
- having count(distinct B.id) >= 5;  
- 
- 
+on A.id = B.managerId 
+where B.managerId is not Null 
+group by B.managerId 
+having count(distinct B.id) >= 5 ;
