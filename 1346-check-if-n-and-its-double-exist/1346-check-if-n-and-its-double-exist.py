@@ -4,8 +4,8 @@ class Solution:
         for i in arr:
             if i*2 in d or i/2 in d:
                 return True 
-            if i not in d:
-                d.add(i)
+            #if i not in d:
+            d.add(i)
         return False 
     
      
