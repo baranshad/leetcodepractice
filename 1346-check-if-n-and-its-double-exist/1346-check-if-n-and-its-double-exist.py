@@ -1,11 +1,11 @@
 class Solution:
     def checkIfExist(self, arr: List[int]) -> bool:
-        d = {}
+        d = set()
         for i in arr:
             if i*2 in d or i/2 in d:
                 return True 
             if i not in d:
-                d[i] = None 
+                d.add(i)
         return False 
     
      
