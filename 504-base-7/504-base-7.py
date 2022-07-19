@@ -7,8 +7,8 @@ class Solution:
             while abs_num >=7:
                 val = abs_num // 7 
                 remainder = abs_num % 7 
-                res += str(remainder)
                 abs_num = val 
+                res += str(remainder)
             res += str(abs_num)
             return res[::-1] 
         
