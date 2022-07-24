@@ -11,4 +11,5 @@ class Solution:
                 if s1[i] == "A":
                     c1 += 1
             maxc2 = max(maxc2, c2+1)
+        print(c1, maxc2)
         return c1 < 2 and maxc2 < 3
