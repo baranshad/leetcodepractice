@@ -4,13 +4,11 @@ class Solution:
             return 
         
         stack = []
-        d = {}
-        for i in nums2:
-            while stack and stack[-1] < i:
-                d[stack.pop()] = i 
+        d= {}
+        for i in  nums2:
+            while stack and i > stack[-1]:
+                d[stack.pop()] = i
             stack.append(i)
             
-        return [d.get(num, -1) for num in nums1]
-  
-            
-        
+        res = [d.get(i, -1) for i in nums1]
+        return res 
