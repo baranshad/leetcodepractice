@@ -5,7 +5,7 @@ class Solution:
         for i in nums:
             if i == 1:
                 ans +=1 
-            elif i == 0:
+            else:
                 ans = 0
             temp = max(temp, ans)
             
