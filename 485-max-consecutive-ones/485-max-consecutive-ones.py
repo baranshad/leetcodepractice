@@ -4,9 +4,8 @@ class Solution:
         temp = 0
         for i in nums:
             if i == 1:
-                ans +=1 
+                temp +=1 
             else:
-                ans = 0
-            temp = max(temp, ans)
-            
-        return temp 
+                temp = 0
+            ans = max(ans, temp)     
+        return ans
