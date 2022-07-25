@@ -3,9 +3,15 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        for i in range(n):
-            nums1[i+m] = nums2[i]
-            
-        nums1.sort()
+        m1 = nums1[:m]
+        i = j = 0 
+        for k in range(m+n):
+            if j >= n or (i<m and m1[i] <= nums2[j]):
+                nums1[k]= m1[i]
+                i+=1 
+            else:
+                nums1[k] = nums2[j]
+                j+=1 
+                
                 
     
