@@ -9,13 +9,13 @@ class Solution:
         if not root:
             return ""
         else:
-            res = str(root.val)
+            res = str(root.val) 
             l = self.tree2str(root.left)
             r = self.tree2str(root.right)
             
             ls = "(" + l + ")" if l or r else ""
             rs = "(" + r + ")" if r else ""
-            return res + ls + rs
             
+            return res + ls + rs
             
  
