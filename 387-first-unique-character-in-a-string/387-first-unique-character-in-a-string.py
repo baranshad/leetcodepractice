@@ -1,11 +1,13 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        c =Counter(s)
-        
-        for i, val in enumerate(s):
-            if val in c and c[val] == 1:
-                return i 
-        return -1 
-             
-            
-        
+        d = Counter(s)      
+        ans = [i for i, j in d.items() if j ==1]
+        if ans == []:
+            return -1
+        print(ans)
+        idx = len(s)
+        for i, char in enumerate(s):
+            if char in ans:
+                idx = min(idx, i)
+                
+        return idx
