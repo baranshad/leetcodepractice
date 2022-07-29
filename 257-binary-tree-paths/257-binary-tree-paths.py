@@ -7,17 +7,18 @@
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
         if not root:
-            return []
+            return root 
         
-        def helper(root, path):
+        def helper(root, res):
             if root:
-                path += str(root.val)
+                res += str(root.val)
                 if not root.left and not root.right:
-                    res.append(path)
+                    arr.append(res)
                 else:
-                    path += "->"
-                    helper(root.left, path)
-                    helper(root.right, path)
-        res = []  
+                    res += '->' 
+                    helper(root.left, res)
+                    helper(root.right, res)
+
+        arr = []
         helper(root, '')
-        return res 
+        return arr
