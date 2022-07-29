@@ -11,9 +11,9 @@ class Solution:
         
         def helper(root):
             if not root:
-                return 0
+                return 0 
             
-            return 1+ max(helper(root.left),  helper(root.right))
+            return 1 + max(helper(root.left), helper(root.right))  
         
-        return abs(helper(root.left) - helper(root.right)) < 2 and  self.isBalanced(root.left)  and self.isBalanced(root.right)
-            
+        
+        return abs(helper(root.left)- helper(root.right)) < 2 and self.isBalanced(root.left) and self.isBalanced(root.right)
