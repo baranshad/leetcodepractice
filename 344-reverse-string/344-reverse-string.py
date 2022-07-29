@@ -3,11 +3,9 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        init=0
-        fin=len(s)-1
-        while(init < fin):
-            tmp=s[init]
-            s[init]=s[fin]
-            s[fin]=tmp
-            init+=1
-            fin-=1
+        l, r = 0, len(s)-1
+        while l< r:
+            s[l], s[r] = s[r], s[l]
+            l += 1 
+            r -=1 
+            
