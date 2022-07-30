@@ -10,10 +10,10 @@ class Solution:
         def helper(root):
             if not root:
                 return root 
-            helper(root.left)
-            s1.append(root.val)
             helper(root.right)
-            
+            s1.append(root.val)
+            helper(root.left)
+               
         helper(root)
-        return min(s1[i+1]-s1[i] for i in range(len(s1)-1))
+        return min(s1[i]-s1[i+1] for i in range(len(s1)-1))
         
