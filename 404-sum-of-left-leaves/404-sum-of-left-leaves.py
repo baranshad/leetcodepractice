@@ -9,20 +9,22 @@ class Solution:
         if not root:
             return 0
         
-        def is_leaf(node):
-            return node and not node.left and not node.right 
+        def isleaf(root):
+            if root and not root.left and not root.right:
+                return True 
+            return False 
         
+        
+        count = 0
         stack = [root]
-        total = 0 
         while stack:
-            sub_root = stack.pop()
-            if is_leaf(sub_root.left):
-                total += sub_root.left.val 
-            if sub_root.left:
-                stack.append(sub_root.left)
-            if sub_root.right:
-                stack.append(sub_root.right)
+            node = stack.pop()
+            if isleaf(node.left):
+                count += node.left.val 
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+                
+        return count 
             
-                
-        return total 
-                
