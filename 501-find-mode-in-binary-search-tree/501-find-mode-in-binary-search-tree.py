@@ -6,23 +6,19 @@
 #         self.right = right
 class Solution:
     def findMode(self, root: Optional[TreeNode]) -> List[int]:
-        res = 1 
-        d = {}
-        def check(node, d):
-            if not node:
-                return d 
-            if node.val in d:
-                d[node.val] += 1 
-            else:
-                d[node.val] = 1 
-                
-            if node.left:
-                check(node.left, d)
-            if node.right:
-                check(node.right, d)
-                
-            return d 
+        res = []
+        if not root:
+            return root 
         
-        check(root, d)
-        maxnum = max(d.values())
-        return (i for i,j in d.items() if j == maxnum)
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            res.append(node.val)
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        
+        c = Counter(res)
+        maxnum = max(c.values())
+        return (i for i,j in c.items() if j == maxnum)
