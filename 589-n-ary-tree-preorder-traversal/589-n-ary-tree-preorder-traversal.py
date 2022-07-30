@@ -11,14 +11,17 @@ class Solution:
         if not root:
             return root 
         
-        #stack = [root]
-        res = []
-        def preorder(node):
-            res.append(node.val)
-            for c in node.children:
-                if c:
-                    preorder(c)
-                    
+        def preorder(root):
+            if not root:
+                return 
+            arr.append(root.val)
+            for c in root.children:
+                preorder(c)
+                
+            return arr
+        
+    
+        arr = []
         preorder(root)
-        return res 
+        return arr
             
