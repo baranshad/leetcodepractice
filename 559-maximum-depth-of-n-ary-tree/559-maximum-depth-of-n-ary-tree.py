@@ -10,8 +10,16 @@ class Solution:
     def maxDepth(self, root: 'Node') -> int:
         if not root:
             return 0 
-        elif root.children == []:
-            return 1 
-        else:
-            height = [self.maxDepth(c) for c in root.children]
-            return 1 + max(height)
+        stack = []
+        if root is not None:
+            stack.append((1, root))
+            
+        depth = 0 
+        while stack:
+            curdepth, root = stack.pop()
+            if root:
+                depth = max(depth, curdepth)
+                for c in root.children:
+                    stack.append((curdepth +1, c))
+                    
+        return depth 
