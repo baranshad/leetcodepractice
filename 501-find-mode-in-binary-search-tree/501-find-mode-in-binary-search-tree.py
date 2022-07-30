@@ -24,4 +24,5 @@ class Solution:
             return d 
         
         check(root, d)
-        return [i for i,j in d.items() if j == max(d.values())]
+        maxnum = max(d.values())
+        return [i for i,j in d.items() if j == maxnum]
