@@ -8,4 +8,5 @@ class Solution:
             if num == 0 and res > 9:
                 num = res 
                 res = 0 
-        return res
+                
+        return res 
