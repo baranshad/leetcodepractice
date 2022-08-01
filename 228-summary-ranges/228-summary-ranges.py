@@ -4,12 +4,12 @@ class Solution:
         start = 0
         nums += [-1]
         for i in range(len(nums)-1):
-            if nums[i+1] != nums[i] + 1:
+            if nums[i+1] - nums[i] != 1:
                 if start != i:
                     res.append(str(nums[start]) + "->" + str(nums[i]))
-                    start = i+1 
+                    start = i + 1 
                 else:
-                    res.append(str(nums[i]))
+                    res.append(str(nums[start]))
                     start = i + 1 
         return res 
-    
+                
