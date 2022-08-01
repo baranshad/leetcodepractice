@@ -7,4 +7,5 @@ class Solution:
                 return s[i+1:j+1] == s[i+1:j+1][::-1] or s[i:j] == s[i:j][::-1]
             i += 1 
             j -= 1 
+            
         return True 
