@@ -4,10 +4,10 @@ class Solution:
         prev = 0 
         for i, val in enumerate(nums):
             if val not in d:
-                d[val] = i 
+                d[val] = i
             else:
                 prev = d[val]
-                d[val] = i
                 if abs(i-prev) <= k:
                     return True 
+                d[val] = i
         return False 
