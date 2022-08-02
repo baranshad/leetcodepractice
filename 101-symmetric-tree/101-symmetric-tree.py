@@ -7,14 +7,15 @@
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if not root:
-            return Ture 
+            return True 
+        
         stack = [(root.left, root.right)]
         while stack:
-            a,b = stack.pop(0)
-            if a and b and a.val == b.val:
-                stack.append((a.left, b.right))
-                stack.append((a.right, b.left))
-            elif not (not a and not b):
+            l,r = stack.pop()
+            if l and r and l.val == r.val:
+                stack.append((l.left, r.right))
+                stack.append((l.right, r.left))
+            elif not (not l and not r):
                 return False 
         return True 
-                
+    
