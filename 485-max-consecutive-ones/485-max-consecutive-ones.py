@@ -7,5 +7,5 @@ class Solution:
                 temp +=1 
             else:
                 temp = 0
-            ans = max(ans, temp)     
-        return ans
+            ans = max(ans, temp)
+        return ans 
