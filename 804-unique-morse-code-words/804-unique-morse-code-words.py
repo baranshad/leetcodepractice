@@ -4,7 +4,7 @@ class Solution:
         seen = set()
         for word in words:
             temp = ""
-            for j in word:
-                temp+= "".join(m[ord(j)-ord("a")])
+            for i in word:
+                temp += m[ord(i) - ord('a')]
             seen.add(temp)
         return len(seen)
