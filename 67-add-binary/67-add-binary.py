@@ -1,6 +1,8 @@
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        final_int, final_str, carry = str(int(a) + int(b)), "", 0
+        final_int = str(int(a) + int(b)) 
+        final_str = "" 
+        carry = 0
         for i in range(len(final_int)-1, -1, -1):
             val = (int(final_int[i]) + carry) % 2 
             carry = (int(final_int[i]) + carry) // 2 
