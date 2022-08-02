@@ -8,5 +8,4 @@ class Solution:
         res = [j for i, j in d_s if len(j) == len(d_s[0][1])]
         #print(res)
         ans = [max(i)-min(i) +1 for i in res]
-        print(ans)
         return min(ans)
