@@ -5,10 +5,9 @@ BEGIN
       select max(salary) from 
       employee e1 
       where 
-      (select count(distinct salary) = N-1
-       from employee e2 
-       where e2.salary>e1.salary)
-      
+      (select count(distinct salary) = N-1 
+      from employee e2 
+      where e2.salary > e1.salary)
       
       
   );
