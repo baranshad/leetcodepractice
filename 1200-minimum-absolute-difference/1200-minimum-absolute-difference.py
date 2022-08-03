@@ -11,5 +11,6 @@ class Solution:
             elif curdiff < minv:
                 ans = [[arr[i], arr[i+1]]]
                 minv = curdiff 
-                
+        
         return ans 
+                
