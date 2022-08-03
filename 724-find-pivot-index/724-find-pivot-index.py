@@ -2,8 +2,10 @@ class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         S = sum(nums)
         leftsum = 0
-        for i, x in enumerate(nums):
-            if leftsum == (S - leftsum - x):
-                return i
-            leftsum += x
-        return -1
+        for i, val in enumerate(nums):
+            if leftsum == S - leftsum - val:
+                return i 
+            leftsum += val 
+            
+        return -1 
+            
