@@ -5,12 +5,10 @@ class Solution:
         ans = []
         
         for i in range(len(arr)-1):
-            curdiff = arr[i+1] - arr[i]
-            if minv == curdiff:
+            curff = arr[i+1] - arr[i]
+            if curff == minv:
                 ans.append([arr[i], arr[i+1]])
-            elif curdiff < minv:
+            elif curff < minv:
                 ans = [[arr[i], arr[i+1]]]
-                minv = curdiff 
-        
+                minv = curff 
         return ans 
-                
