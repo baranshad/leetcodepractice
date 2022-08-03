@@ -4,14 +4,14 @@ class Solution:
         ans = 0
         for i in range(1, n+1):
             s = str(i)
-            temp =""
-            for j in s:
-                if j in d:
-                    temp += d[j]
+            temp = ""
+            for char in s:
+                if char in d:
+                    temp += d[char]
                 else:
                     temp = ""
                     break
-            
-            if temp and int(temp) != i:
+                    
+            if temp and int(temp) != i: 
                 ans += 1 
         return ans 
