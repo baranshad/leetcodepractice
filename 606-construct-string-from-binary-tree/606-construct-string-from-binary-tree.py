@@ -8,14 +8,14 @@ class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         if not root:
             return ""
-        else:
-            res = str(root.val) 
-            l = self.tree2str(root.left)
-            r = self.tree2str(root.right)
-            
-            ls = "(" + l + ")" if l or r else ""
-            rs = "(" + r + ")" if r else ""
-            
-            return res + ls + rs
-            
+        
+        res = ""
+        res+= str(root.val)
+        l = self.tree2str(root.left)
+        r = self.tree2str(root.right)
+        
+        ls = "(" + l + ")" if l or r else ""
+        rs = "(" + r + ")" if r else ""
+        
+        return res + ls + rs 
  
