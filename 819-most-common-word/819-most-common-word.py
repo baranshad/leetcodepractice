@@ -3,11 +3,7 @@ class Solution:
         set_banned = set(banned)
         para_lower = paragraph.lower()
         para_lower = re.sub(r"[!?',;.]+",' ',para_lower)
-        word_list = para_lower.split()
-        counter = Counter(word_list).most_common()
-        for word,_ in counter:
+        counter = Counter(para_lower.split()).most_common()
+        for word, _ in counter:
             if word not in set_banned:
-                result = word
-                break
-        return result
-            
+                return word 
