@@ -1,19 +1,22 @@
 class Solution:
     def addToArrayForm(self, num: List[int], k: int) -> List[int]:
-        if len(num) < len(str(k)):
-            for i in range(len(str(k))- len(num)):
-                num.insert(0,0)
-                
-        res = ""
+        strk = [int(i) for i in str(k)]
+        i = len(num)-1
+        j = len(strk) - 1 
         carry = 0
-        for i in range(len(num)-1, -1, -1):
-            curval = 0
-            val = (num[i] + k % 10 + carry) % 10 
-            carry = (num[i] + k % 10 + carry) // 10 
-            res += str(val)
-            curval = val 
-            k = k//10 
+        res = []
+        while i >= 0 or j >= 0:
+            x1 = num[i] if i >=0 else 0
+            x2 = strk[j] if j >=0 else 0
+            val = (x1 + x2 + carry) % 10 
+            carry = (x1 + x2 + carry)// 10 
+            res.append(val)
+            i -= 1 
+            j -= 1 
+        
         if carry:
-            res += "1"
-        return list(res[::-1])
+            res.append(carry)
+        
+        return res[::-1]
+            
             
