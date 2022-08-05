@@ -1,17 +1,19 @@
 class Solution:
     def findRelativeRanks(self, score: List[int]) -> List[str]:
-        cnt = 1
+        j = 1
         dic = {}
- 
         for i in reversed(sorted(score)):
-            if cnt == 1:
+            if j == 1:
                 dic[i] = "Gold Medal"
-            elif cnt == 2:
+            elif j == 2:
                 dic[i] = "Silver Medal"
-            elif cnt == 3:
+            elif j==3:
                 dic[i] = "Bronze Medal"
+                
             else:
-                dic[i] = str(cnt)
-            cnt += 1
+                dic[i] = str(j)
+                
+            j += 1 
+            
         return [dic[i] for i in score]
          
