@@ -9,5 +9,5 @@ class Solution:
             else:
                 d[i] = rank 
                 rank = rank +1 
-        print(d)
+        #print(d)
         return [d[i] for i in arr]
