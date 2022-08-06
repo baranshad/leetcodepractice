@@ -3,12 +3,9 @@ class Solution:
         d = {}
         for i,val in enumerate(keyboard):
             d[val] = i
-        #print(d)
-        prev = 0
-        ans = 0
-        for i in word:
-            ans += abs(prev-d[i])
-            prev = d[i]
+        ans = d[word[0]]
+        for i in range(len(word)-1):
+            ans += abs(d[word[i+1]] - d[word[i]])
         return ans 
             
         
