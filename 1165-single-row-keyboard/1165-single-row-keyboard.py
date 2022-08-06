@@ -3,13 +3,13 @@ class Solution:
         d = {}
         for i,val in enumerate(keyboard):
             d[val] = i
-        
+        #print(d)
         prev = 0
-        res = 0
+        ans = 0
         for i in word:
-            res += abs(prev-d[i])
+            ans += abs(prev-d[i])
             prev = d[i]
+        return ans 
             
-        return res 
-
-         
+        
+        
