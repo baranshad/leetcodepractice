@@ -6,7 +6,7 @@ class Solution:
         ans = [[0]*n for i in range(m)] 
         for i in range(m):
             for j in range(n):
-                temp = [img[i+r][j+c] for r, c in d if 0<= i+r < m and 0<= j+c < n]
-                ans[i][j] = sum(temp)//len(temp)
+                temp = [img[i+k[0]][j+k[1]] for k in d if 0<= i+k[0]< m and 0<= j+k[1]< n]
+                ans[i][j] = int(sum(temp)/len(temp))
                 
         return ans 
