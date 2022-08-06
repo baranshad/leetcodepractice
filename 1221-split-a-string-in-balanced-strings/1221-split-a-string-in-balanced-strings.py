@@ -4,11 +4,13 @@ class Solution:
         for c in s:
             if c == "L":
                 left += 1 
-            else: 
+            elif c == "R":
                 right += 1 
-            if left and right and left==right:
+            
+            if left and right and left == right:
                 res += 1 
-                left = 0
-                right = 0 
+                left = 0 
+                right = 0
+                
         return res 
         
