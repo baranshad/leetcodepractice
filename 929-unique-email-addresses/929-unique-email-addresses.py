@@ -1,23 +1,24 @@
 class Solution:
     def numUniqueEmails(self, emails: List[str]) -> int:
-        unique = set()
-        for w in emails:
+        res = set() 
+        for word in emails:
             temp = ""
-            for j, c in enumerate(w):
-                if c.isalpha():
-                    temp+=c
-                elif c == ".":
-                    continue 
-                elif c == "+" or c=="@":
+            for i, char in enumerate(word):
+                if char.isalpha():
+                    temp += char 
+                elif char == ".":
+                    continue
+                elif char =="+" or char == "@":
                     break 
                     
-            temp2 = ""
-            for char in reversed(w):
-                temp2 += char
+                    
+            temp1 = ""
+            for i, char in enumerate(reversed(word)):
+                temp1 += char
                 if char == "@":
                     break 
                     
-            unique.add(temp+temp2[::-1])
-            
-        return len(unique)
+            cur = temp + temp1[::-1]
+            res.add(cur)
+        return len(res)
                 
