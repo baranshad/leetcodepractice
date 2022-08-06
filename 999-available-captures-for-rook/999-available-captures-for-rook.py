@@ -1,38 +1,41 @@
 class Solution:
     def numRookCaptures(self, board: List[List[str]]) -> int:
         m = 8
-        for i in range(m):
-            for j in range(m):
-                if board[i][j] == "R":
-                    x,y = i,j
+        for o in range(m):
+            for p in range(m):
+                if board[o][p] == "R":
+                    i,j = o,p
                     break 
-        res = 0
-        for i in range(x-1,-1,-1):
-            if board[i][y] == 'p':
-                res += 1 
+                    
+        total = 0 
+        for y in range(j+1, m):
+            if board[i][y] == "p":
+                total += 1 
                 break 
             elif board[i][y] == "B":
                 break 
                 
-        for i in range(x+1,m):
-            if board[i][y] == 'p':
-                res += 1 
+        for y in range(j-1, -1,-1):
+            if board[i][y] == "p":
+                total += 1 
                 break 
             elif board[i][y] == "B":
                 break 
                 
-        for j in range(y-1, -1, -1):  # check west
-            if board[x][j] == 'p':
-                res += 1
-                break
-            if board[x][j] == 'B':
-                break
+        for x in range(i+1, m):
+            if board[x][j] == "p":
+                total += 1 
+                break 
+            elif board[x][j] == "B":
+                break 
+                
+        for x in range(i-1,-1, -1):
+            if board[x][j] == "p":
+                total += 1 
+                break 
+            elif board[x][j] == "B":
+                break 
+                
+                
+        return total 
         
-        for j in range(y+1, m):  # check east
-            if board[x][j] == 'p':
-                res += 1
-                break
-            if board[x][j] == 'B':
-                break
-        
-        return res
