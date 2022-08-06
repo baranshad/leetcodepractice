@@ -4,8 +4,8 @@ class Solution:
         print(c)
         ans = -1
         for i, j in c.items():
-            if i==j and i > ans:
-                ans = i
+            if i==j:
+                ans = max(ans, i)
         return ans 
        
   
