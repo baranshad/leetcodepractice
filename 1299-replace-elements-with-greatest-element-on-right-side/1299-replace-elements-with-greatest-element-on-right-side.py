@@ -6,6 +6,6 @@ class Solution:
                 res.pop()
                 res.append(arr[i])
             res.append(res[-1])
-        res = res[:len(arr)-1][::-1] + [-1]
-        return res
+        ans = [-1] + res
+        return ans[:len(arr)][::-1]
                 
