@@ -8,10 +8,10 @@ class Solution:
                 if len(temp) > 0:
                     res.append(temp)
                     temp = ""
-            elif val != " ":
+            else:
                 temp += val 
         
         return " ".join(res[:k])
-                 
+                
  
             
