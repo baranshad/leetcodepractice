@@ -1,20 +1,18 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        l=len(nums)
-        counter={}
-        ans=[0,0]
+        l = len(nums)
+        ans = [0,0]
+        count = {}
         for i in nums:
-            if i in counter:
-                counter[i]+=1
-                ans[0]=i
-            else:
-                counter[i]=1
-        print(ans, counter)
-        for i in range(l):
-            print(i)
-            if i+1 not in counter:
-                ans[1] = i+1
-                return ans
-        
+            if i in count:
+                count[i] += 1 
+                ans[0] = i 
             
+            else:
+                count[i] = 1 
                 
+        for j in range(l):
+            if j+1 not in count:
+                ans[1] = j+1 
+                
+        return ans 
