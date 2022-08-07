@@ -14,7 +14,5 @@ class Solution:
         elif not root.children:
             return 1 
         else:
-            height = [self.maxDepth(c) for c in root.children]
-            return max(height) +1 
-                
-        
+            depth = [self.maxDepth(c) for c in root.children]
+            return max(depth) + 1 
