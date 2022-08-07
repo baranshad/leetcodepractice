@@ -17,8 +17,6 @@ class Solution:
             arr.append(root.val)
             for c in root.children:
                 preorder(c)
-                
-            return arr
         
     
         arr = []
