@@ -14,17 +14,15 @@ class Solution:
                 return True 
             return False 
         
-        
         count = 0
-        stack = [root]
-        while stack:
-            node = stack.pop()
-            if isleaf(node.left):
-                count += node.left.val 
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
+        res = [root]
+        while res:
+            root = res.pop()
+            if isleaf(root.left):
+                count += root.left.val
+            if root.left:
+                res.append(root.left)
+            if root.right:
+                res.append(root.right)
                 
         return count 
-            
