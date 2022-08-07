@@ -16,6 +16,5 @@ class Solution:
         for c in child:
             if c:
                 mindepth = min(self.minDepth(c), mindepth)
-                
         return mindepth + 1 
     
