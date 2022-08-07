@@ -7,6 +7,6 @@ class Solution:
                 ans += 1 
                 oddset.remove(char)
             else:
-                oddset.add(char)     
+                oddset.add(char)
+                
         return ans * 2 + 1 if oddset else ans * 2 
-        
