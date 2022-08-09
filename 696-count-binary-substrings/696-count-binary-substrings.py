@@ -8,3 +8,5 @@ class Solution:
                 groups[-1] += 1 
                 
         return sum(min(groups[i], groups[i+1]) for i in range(len(groups)-1))
+                
+ 
