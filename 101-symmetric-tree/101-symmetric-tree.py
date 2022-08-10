@@ -11,11 +11,12 @@ class Solution:
         
         stack = [(root.left, root.right)]
         while stack:
-            l,r = stack.pop()
-            if l and r and l.val == r.val:
-                stack.append((l.left, r.right))
-                stack.append((l.right, r.left))
-            elif not (not l and not r):
+            x,y = stack.pop()
+            if x and y and x.val == y.val:
+                stack.append((x.left, y.right))
+                stack.append((x.right, y.left))
+            elif not (not x and not y):
                 return False 
         return True 
     
+     
