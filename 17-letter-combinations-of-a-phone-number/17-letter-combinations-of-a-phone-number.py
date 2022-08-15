@@ -5,17 +5,17 @@ class Solution:
         d = {"2": "abc", "3": "def", "4": "ghi", "5": "jkl", 
                    "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
         ans = []
-        def helper(idx, path):
+        
+        def helper(path, idx):
             if len(path) == len(digits):
-                ans.append("".join(path))   
+                ans.append("".join(path))
                 return 
-
+            
             letters = d[digits[idx]]
             for i in letters:
                 path.append(i)
-                helper(idx+1, path)
+                helper(path, idx+1)
                 path.pop()
-                
-        helper(0, [])
-        return ans 
-                
+        
+        helper([], 0)
+        return ans
