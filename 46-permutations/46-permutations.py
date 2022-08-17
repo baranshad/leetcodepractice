@@ -1,18 +1,17 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        def helper(stack, used):
-            if len(stack) == len(nums):
-                res.append(stack[:])
+        
+        def helper(nums, idx):
+            ans = []
+            if idx >= len(nums):
+                ans.append(nums[:])
                 
-            for i in range(len(nums)):
-                if used[i] == True:
-                    continue 
-                used[i] = True 
-                stack.append(nums[i])
-                helper(stack, used)
-                stack.pop()
-                used[i] = False 
+            for i in range(idx, len(nums)):
+                nums[i], nums[idx] = nums[idx], nums[i]
+                ans+= helper(nums,idx+1 )
+                nums[i], nums[idx] = nums[idx], nums[i]
+            return ans
                 
-        helper([], [False]*len(nums))
-        return res 
+        
+        
+        return helper(nums, 0)
