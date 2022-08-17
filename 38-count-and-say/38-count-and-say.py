@@ -5,15 +5,15 @@ class Solution:
         
         x = self.countAndSay(n-1)
         res = ""
-        i = 0 
-        counter = 0 
+        i= 0 
+        count = 0
         while i < len(x):
             cur = x[i]
             while i < len(x) and x[i] == cur:
-                counter += 1 
+                count += 1 
                 i += 1 
                 
-            res += str(counter) + str(cur)
-            counter = 0 
-        return res 
+            res += str(count) + str(cur)
+            count = 0 
             
+        return res 
