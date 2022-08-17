@@ -1,10 +1,11 @@
 class Solution:
     def titleToNumber(self, columnTitle: str) -> int:
-        result = 0
-        alpha_map = {chr(i + 65): i + 1 for i in range(26)}
-        n = len(columnTitle)
-        for i in range(n):
-            cur = columnTitle[n-1-i]
-            result += (alpha_map[cur] * (26 ** i))
-        
-        return result
+        res = 0
+        d = {chr(i + 65): i + 1 for i in range(26)}
+        print(d)
+        for i in range(len(columnTitle)):
+            cur = columnTitle[len(columnTitle)-1 -i]
+            res += d[cur] * (26**i)  
+            
+        return res 
+   
