@@ -1,18 +1,16 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        def helper(s1):
-            s1_list = sorted(list(s1)) 
-            return ''.join(s1_list)
-
-        d = {}
+        def numconvert(word):
+            numlist = [0]*26
+            for i in word:
+                numlist[ord(i)-ord('a')] += 1 
+            return numlist 
+        
+        d = defaultdict(list)
         for i in strs:
+            d[tuple(numconvert(i))].append(i)
             
-            if helper(i) in d:
-                d[''.join(sorted(list(i)))].append(i)
-            else:
-                d[''.join(sorted(list(i)))] = [i]
-
-        ans = [i for i in d.values()]
-        return ans 
-            
-                
+        res = [j for i,j in d.items()]
+        return res 
+        
+        
