@@ -8,13 +8,11 @@ class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0 
-        
         child = [root.left, root.right]
         if not any(child):
             return 1 
         mindepth = float("inf")
         for c in child:
-            if c:
+            if c: 
                 mindepth = min(self.minDepth(c), mindepth)
         return mindepth + 1 
-    
