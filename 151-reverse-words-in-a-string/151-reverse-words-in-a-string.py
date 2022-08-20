@@ -21,6 +21,6 @@ class Solution:
             else:
                 temp += char
                 
-        return (' '.join(ans[::-1]))
+        return ' '.join(ans[::-1])
                 
             
