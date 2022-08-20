@@ -1,20 +1,21 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        sign = [-1,1][(dividend > 0) == (divisor > 0)]
-
-        dividend, divisor, res = abs(dividend), abs(divisor), 0
+        sign = [-1, 1][(dividend>= 0) == (divisor>=0)]
+        ans = 0
+        nu = abs(dividend)
+        deno = abs(divisor)
         
-        while dividend >= divisor: #1
-            doubling = 1
-            cur_divisor = divisor
-            while (cur_divisor<<1) <= dividend: #2 # <<1 is double 
-                cur_divisor <<= 1
-                doubling <<= 1
-                print(cur_divisor, doubling)
-            dividend -= cur_divisor #3
-            res += doubling
-        
-        return min(max(-2147483648, res*sign), 2147483647) 
+        while deno <= nu:
+            double = 1
+            cur_divisor = deno 
+            while (cur_divisor <<1) <= nu:
+                cur_divisor <<= 1 
+                double <<= 1 
+            
+            nu -= cur_divisor 
+            ans += double 
+            
+        return min(max(-2147483648, ans*sign), 2147483647) 
     
     
     # idea: counting how many doubling divisor we can substract from dividend.
