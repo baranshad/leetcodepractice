@@ -9,6 +9,7 @@ class Solution:
         inorder_index = {}
         for i, val in enumerate(inorder):
             inorder_index[val] = i 
+            
         
         root_index = 0
         def helper(l,r):
@@ -22,13 +23,10 @@ class Solution:
             
             root_index += 1 
             
-            root.left = helper(l, inorder_index[rootval]-1 )
-            root.right = helper(inorder_index[rootval] + 1, r)
+            root.left = helper(l, inorder_index[rootval]-1)
+            root.right = helper(inorder_index[rootval]+1, r)
             return root 
         
+        
         return helper(0, len(preorder)-1)
-    
-    
-  
-     
             
