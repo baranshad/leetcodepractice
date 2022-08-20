@@ -1,12 +1,13 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        oddset = set()
+        odd = set()
         ans = 0
-        for char in s:
-            if char in oddset:
+        for i in s:
+            if i in odd:
                 ans += 1 
-                oddset.remove(char)
+                odd.remove(i)
             else:
-                oddset.add(char)
+                odd.add(i)
                 
-        return ans * 2 + 1 if oddset else ans * 2 
+        return ans* 2 + 1 if odd else ans * 2 
+                
