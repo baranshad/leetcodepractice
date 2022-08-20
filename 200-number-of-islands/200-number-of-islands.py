@@ -1,27 +1,22 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        m = len(grid)
-        n = len(grid[0])
         
-
         def helper(i,j):
-            if i < 0 or j < 0 or i >= m or j >= n or grid[i][j] == "0":
+            d = [(-1,0),(0,1), (0,-1), (1,0)]
+            if i < 0 or j < 0 or i >= len(grid) or j >= len(grid[0]) or grid[i][j] == "0":
                 return 
-            grid[i][j] = "0" 
-            helper(i, j-1)
-            helper(i-1, j)
-            helper(i+1, j)
-            helper(i,j+1)
-            
-        ans = 0   
-        for i in range(m):
-            for j in range(n):
+            grid[i][j] = "0"
+            for c in d:
+                nx, ny = i+c[0], j + c[1]
+                helper(nx, ny)
+                
+        count = 0 
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
                 if grid[i][j] == "1":
                     helper(i,j)
-                    ans +=1 
-                
-        return ans 
-    
-
-    
-  
+                    count += 1 
+                    
+        return count 
+                    
+        
