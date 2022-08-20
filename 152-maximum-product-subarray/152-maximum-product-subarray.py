@@ -1,10 +1,10 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        maxpro = minpro = 1 
-        ans = float("-inf")
+        ma = mi = 1
+        ans = float(-inf)
         for i in nums:
-            minpro, maxpro = min(i, maxpro*i, minpro*i), max(i, maxpro * i, minpro * i)
-            ans = max(ans, maxpro, minpro)
+            mi, ma = min(i, ma*i, mi*i), max(i, ma*i, mi*i)
+            ans = max(ans, mi, ma)
         return ans 
-    
-    
+            
+        
