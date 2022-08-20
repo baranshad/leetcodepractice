@@ -1,14 +1,16 @@
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
         sign = [-1,1][(dividend > 0) == (divisor > 0)]
+
         dividend, divisor, res = abs(dividend), abs(divisor), 0
         
         while dividend >= divisor: #1
             doubling = 1
             cur_divisor = divisor
-            while (cur_divisor<<1) <= dividend: #2
+            while (cur_divisor<<1) <= dividend: #2 # <<1 is double 
                 cur_divisor <<= 1
                 doubling <<= 1
+                print(cur_divisor, doubling)
             dividend -= cur_divisor #3
             res += doubling
         
