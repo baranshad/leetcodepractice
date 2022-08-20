@@ -3,21 +3,24 @@ class Solution:
         l = 0 
         r = len(s)-1
         
-        while l<= r and s[l] ==' ':
+        while l <= r and s[l]==" ":
             l += 1 
             
-        while l<=r and s[r] == ' ':
+        while l <= r and s[r]==" ":
             r -= 1 
-            
-        d = deque()
-        word = []
-        while l <= r:
-            if s[l] == ' ' and word:
-                d.appendleft(''.join(word))
-                word = []
-            elif s[l] != ' ':
-                word.append(s[l])
-            l += 1 
-        d.appendleft(''.join(word))
         
-        return ' '.join(d)
+        snew = s[l:r+1] + " "
+        #print(snew[-1])
+        ans = []
+        temp = ""
+        for i, char in enumerate(snew):
+            if char == " ":
+                if temp:
+                    ans.append(temp)
+                    temp = ""
+            else:
+                temp += char
+                
+        return (' '.join(ans[::-1]))
+                
+            
