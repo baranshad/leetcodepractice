@@ -3,11 +3,11 @@ class Solution:
         arr = path.split('/')
         stack = []
         for s in arr:
-            if s == '..':
+            if s == "..":
                 if stack:
                     stack.pop()
                     
-            elif s=='.' or s=='':
+            elif s =='.' or s=='':
                 continue 
                 
             else:
