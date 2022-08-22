@@ -1,11 +1,18 @@
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
-        dp = [[0] * len(matrix[0]) for _ in range(len(matrix))]
-        for rowIdx, row in enumerate(matrix):
-            for colIdx, num in enumerate(row):
-                if (rowIdx == 0 or colIdx == 0) and num == '1':
-                    dp[rowIdx][colIdx] = 1
-                elif num == '1':
-                    dp[rowIdx][colIdx] = min(dp[rowIdx-1][colIdx], dp[rowIdx][colIdx-1], dp[rowIdx-1][colIdx-1]) + 1
-        ans = max(max(x) for x in dp)
+        m = len(matrix)
+        n = len(matrix[0])
+        
+        res = [[0]*n for _ in range(m)]
+        
+        for i in range(m):
+            for j in range(n):
+                if (i==0 or j == 0 ) and matrix[i][j] == "1":
+                    res[i][j] = 1 
+                elif matrix[i][j] == "1":
+                    res[i][j] = min(res[i-1][j], res[i][j-1], res[i-1][j-1])+1
+        ans = max(max(row) for row in res)
         return ans * ans
+    
+    
+   
