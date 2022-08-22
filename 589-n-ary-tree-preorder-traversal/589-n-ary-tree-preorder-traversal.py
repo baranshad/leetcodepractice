@@ -9,11 +9,11 @@ class Node:
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
         if not root:
-            return []
+            return 
         
         def helper(root):
             if not root:
-                return None
+                return None ## return or return none or return [] are all correct 
             
             arr.append(root.val)
             for c in root.children:
