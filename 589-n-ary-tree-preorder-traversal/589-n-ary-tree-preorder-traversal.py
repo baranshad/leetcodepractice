@@ -9,17 +9,16 @@ class Node:
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
         if not root:
-            return root 
+            return []
         
-        def preorder(root):
+        def helper(root):
             if not root:
-                return 
+                return []
+            
             arr.append(root.val)
             for c in root.children:
-                preorder(c)
-        
-    
+                helper(c)
+                
         arr = []
-        preorder(root)
+        helper(root)
         return arr
-            
