@@ -11,18 +11,13 @@ class Solution:
             nonlocal res 
             if not root:
                 return 0 
-                
             l = helper(root.left)
             r = helper(root.right)
-            tillnow = abs(l- r)
-            res += tillnow
-            
-            return l + r + root.val 
-        
+            till = abs(l-r)
+            res += till 
+            return root.val + l + r 
         helper(root)
         return res 
-            
-            
         
             
         
