@@ -13,7 +13,7 @@ class Solution:
         
         def helper(root):
             if not root:
-                return []
+                return None
             
             arr.append(root.val)
             for c in root.children:
