@@ -9,8 +9,10 @@ class Solution:
         def helper(t1, t2):
             if not t1 or not t2:
                 return not t1 and not t2 
+            
             if t1.val != t2.val:
-                return False
+                return False 
+            
             else:
                 return helper(t1.left, t2.left) and helper(t1.right, t2.right)
             
@@ -21,8 +23,5 @@ class Solution:
         if helper(root, subRoot):
             return True 
         
-        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-    
-    
-    
-            
+        else:
+            return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
