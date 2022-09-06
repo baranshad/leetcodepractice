@@ -1,16 +1,18 @@
 # Write your MySQL query statement below
+
+
 with T1 as 
-(select A.*, B.name as deapartmentname
-from Employee A 
+(select A.* , B.name as dept_name
+from Employee A
 left join 
 Department B
-on A.departmentId = B.id)
+on A.departmentId = B.id), 
+
+T2 as
+(select * , Dense_rank () over(partition by dept_name order by salary DESC) as Den_rank 
+from T1 )
 
 
-select T2.deapartmentname as Department, T2.name as Employee, T2.Salary
-from 
-(select *, 
-dense_rank() over(partition by  deapartmentname order by Salary DESC) as 'rank'
-from T1) as T2 
-where T2.rank <=3 
-#group by deapartmentname
+select dept_name as Department, name as Employee, salary as Salary
+from T2
+where Den_rank <=3 
