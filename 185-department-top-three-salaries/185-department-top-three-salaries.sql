@@ -14,4 +14,4 @@ from T1)
 
 select T2.dep_name as Department, T2.name as Employee, salary as Salary 
 from T2 
-where T2.den_rank <= 3
+where den_rank <= 3
