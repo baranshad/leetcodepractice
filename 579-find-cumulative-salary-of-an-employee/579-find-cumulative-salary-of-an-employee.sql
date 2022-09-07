@@ -1,7 +1,16 @@
 # Write your MySQL query statement below
-WITH cte AS(SELECT id, MAX(month) AS month FROM Employee GROUP BY id)
 
-SELECT id, month, SUM(salary) OVER(PARTITION BY id ORDER BY month RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS salary
-FROM Employee
-WHERE NOT EXISTS (SELECT id, month FROM cte WHERE Employee.id=cte.id AND Employee.month=cte.month )
-ORDER BY id, month DESC;
+with T1 as 
+(select *, sum(salary) over (partition by id order by month 
+                            range between 2 preceding and current row)as sumofsalary
+from Employee)
+
+select C.id,
+C.month, C.sumofsalary as Salary 
+from 
+(select * , rank() over (partition by T1.id order by T1.month DESC) as "ranknew"
+ from T1
+order by id ASC, month DESC
+) C 
+where C.ranknew >1
+
