@@ -14,5 +14,6 @@ class Solution:
             if head.val == head.next.val:
                 head.next = head.next.next 
             else:
-                head = head.next
+                head = head.next 
+                
         return pre.next 
