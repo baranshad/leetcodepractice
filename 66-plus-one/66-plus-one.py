@@ -1,12 +1,14 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         n = len(digits)
-        for i in range(n-1, -1, -1):
-            if digits[i] == 9:
-                digits[i] = 0 
+        
+        for j in range(n-1, -1, -1):
+            if digits[j] == 9:
+                digits[j] = 0 
             else:
-                digits[i] = digits[i]+1 
-                return digits
+                digits[j] = digits[j] + 1 
+                return digits 
                 break 
-                
         return [1] + digits
+    
+    
