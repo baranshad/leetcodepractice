@@ -10,5 +10,6 @@ class Solution:
                 if left and c == d[left[-1]]:
                     left.pop()
                 else:
-                    return False         
-        return not left  
+                    return False 
+                
+        return left == []
