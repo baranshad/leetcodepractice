@@ -1,25 +1,25 @@
 class Solution:
     def calculate(self, s: str) -> int:
-        num = 0
-        ope = "+"
         stack = []
-        for i, val in enumerate(s):
-            if val.isnumeric():
-                num = num*10 + int(val)
-                print(num)
-            if val in '+-*/' or i == len(s) -1:
+        num = 0 
+        ope = "+"
+        
+        for i,c in enumerate(s):
+            if c.isnumeric():
+                num = num*10 + int(c)
+            if c in "+-*/" or i == len(s) -1:
                 if ope == "+":
                     stack.append(num)
-                elif ope =="-":
+                elif ope == "-":
                     stack.append(-num)
                 elif ope == "*":
-                    j = num*(stack.pop())
+                    j = stack.pop() * num 
                     stack.append(j)
                 elif ope == "/":
-                    j = int(stack.pop()/num)
-                    stack.append(j)
-                    
-                ope = val 
-                num = 0 
-        return sum(stack)
+                    j = stack.pop()/num
+                    stack.append(int(j))
                 
+                num = 0 
+                ope = c
+
+        return sum(stack)
