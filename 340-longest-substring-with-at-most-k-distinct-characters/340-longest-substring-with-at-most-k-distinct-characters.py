@@ -8,7 +8,6 @@ class Solution:
             if len(d) > k:
                 if d[s[j]] == j:
                     del d[s[j]]
-                j += 1 
-                
+                j += 1     
             ans = max(ans, i-j+1)
         return (ans)
