@@ -18,7 +18,8 @@ class Solution:
         for i in range(n):
             if i not in visited:
                 visited.add(i)
-                helper(i)
                 counter += 1 
+                helper(i)
+                
                 
         return (counter)
