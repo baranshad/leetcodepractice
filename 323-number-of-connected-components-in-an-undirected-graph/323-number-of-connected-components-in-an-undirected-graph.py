@@ -5,21 +5,20 @@ class Solution:
             d[i].append(j)
             d[j].append(i)
             
-            
-        def helper(i):
+        def dfs(i):
+            visited.add(i)
             for nb in d[i]:
                 if nb not in visited:
                     visited.add(nb)
-                    helper(nb)
- 
-                
+                    dfs(nb)
+        
         visited = set()
         counter = 0 
         for i in range(n):
             if i not in visited:
-                visited.add(i)
+                dfs(i)
                 counter += 1 
-                helper(i)
                 
-                
-        return (counter)
+        return (counter)        
+        
+  
