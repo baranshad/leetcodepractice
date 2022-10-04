@@ -1,26 +1,22 @@
 class Solution:
     def decodeString(self, s: str) -> str:
-        res = ""
         stack = []
         num = 0
         for i in s:
             if i.isdigit():
                 num = num*10 + int(i)
-                
             elif i == "[":
                 stack.append(num)
                 num = 0 
                 
             elif i == "]":
-                
-                strs = []
+                str1 = []
                 while stack and not isinstance(stack[-1], int):
-                    strs.append(stack.pop())
-                strs.reverse()
-                repeatimes = stack.pop()
-                for _ in range(repeatimes):
-                    stack.append("".join(strs))
-                    
+                    str1.append(stack.pop())
+                str1.reverse()
+                repeatnum = stack.pop()
+                for _ in range(repeatnum):
+                    stack.append("".join(str1))
             else:
                 stack.append(i)
                 
