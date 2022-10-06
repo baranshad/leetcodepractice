@@ -20,6 +20,7 @@ class Solution:
         carry = 0 
         while s1 or s2 or carry:
             add1 = s1.pop() if s1 else 0 
+            #print(add1)
             add2 = s2.pop() if s2 else 0 
             val1 = (add1 + add2 + carry)%10
             carry = (add1 + add2 + carry)//10
