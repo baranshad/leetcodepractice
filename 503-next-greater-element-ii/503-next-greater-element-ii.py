@@ -1,7 +1,7 @@
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
         
-        s = nums * 2 
+        s= nums * 2 
         res = [-1]*len(s)
         stack = []
         
@@ -9,9 +9,6 @@ class Solution:
             while stack and s[stack[-1]] < c:
                 res[stack.pop()] = c 
             stack.append(i)
+            
+        print(res)
         return res[:len(nums)]
-    
-    
-  
-                
-                
