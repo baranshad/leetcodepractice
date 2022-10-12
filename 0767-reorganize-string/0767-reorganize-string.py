@@ -13,11 +13,11 @@ class Solution:
         
         for i in range(len(s)):
             for j, c in s_counter.items():
-                print(maxfreq, j,c)
+                #print(maxfreq, j,c)
                 if c > maxfreq and j != ans[-1]:
                     charleft = j 
                     maxfreq = c
-                    print(ans, s_counter, maxfreq)        
+                    #print(ans, s_counter, maxfreq)        
             if charleft == "":
                 return ""
             
