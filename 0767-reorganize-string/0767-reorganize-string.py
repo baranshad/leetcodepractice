@@ -7,24 +7,25 @@ class Solution:
             else:
                 s_counter[i] = 1 
 
-        
-
         charleft = ""
         maxfreq = 0
         ans = ["@"]
         
         for i in range(len(s)):
             for j, c in s_counter.items():
+                print(maxfreq, j,c)
                 if c > maxfreq and j != ans[-1]:
                     charleft = j 
-                    maxfreq = c 
-                    
+                    maxfreq = c
+                    print(ans, s_counter, maxfreq)        
             if charleft == "":
                 return ""
             
             s_counter[charleft] = s_counter[charleft] -1 
+            #print(s_counter, ans, maxfreq)
             ans.append(charleft)
             maxfreq = 0
+            #print(maxfreq)
             charleft = ""
             
         return "".join(ans[1:])
