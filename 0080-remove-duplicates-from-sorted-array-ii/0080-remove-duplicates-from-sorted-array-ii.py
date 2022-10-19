@@ -7,14 +7,11 @@ class Solution:
                 count += 1 
                 if count > 2:
                     nums.pop(i)
-                    
-                    i-= 1 
+                    i -= 1 
                     
             else:
                 count = 1 
                 
             i += 1 
             
-            
         return len(nums)
-        
