@@ -3,19 +3,19 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        def reverse(li, l, r):
+        def reverse(l, r):
             while l< r:
-                li[l], li[r] = li[r], li[l]
+                s[l], s[r] = s[r], s[l]
                 l += 1 
                 r -= 1 
-       
-        reverse(s, 0, len(s)-1)
+        n = len(s)-1
+        reverse(0, n)
         l = 0 
         for i, c in enumerate(s):
             if c == " ":
-                reverse(s,l, i-1)
+                reverse(l, i-1)
                 l = i + 1 
  
-        reverse(s,l, len(s)-1 )
-        print(s)
+        reverse(l, n)
+
         
