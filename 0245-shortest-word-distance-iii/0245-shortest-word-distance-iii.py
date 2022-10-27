@@ -7,7 +7,7 @@ class Solution:
         for i, w in enumerate(wordsDict):
             if w not in (word1, word2):
                 continue 
-            if cur_word and (word1 == word2 or w != cur_word):
+            elif cur_word and w in (word1, word2) and (word1 == word2 or w != cur_word):
                 min_dist = min(min_dist, i-idx)
                 
             cur_word, idx = w, i 
