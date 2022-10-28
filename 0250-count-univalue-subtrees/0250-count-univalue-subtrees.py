@@ -13,17 +13,17 @@ class Solution:
             nonlocal count
             if node and not node.left and not node.right:
                 count += 1 
-                return True 
-            
+                is_uni = True 
+                return is_uni
             is_uni = True 
+            
             if node.left:
                 is_uni = helper(node.left) and is_uni and node.left.val == node.val 
             if node.right:
                 is_uni = helper(node.right) and is_uni and node.right.val == node.val 
-                
             count += is_uni 
-            return is_uni 
+            return is_uni
         
         count = 0 
         helper(root)
-        return count
+        return count 
